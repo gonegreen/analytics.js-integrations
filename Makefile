@@ -1,5 +1,5 @@
 
-SRC= $(wildcard index.js lib/*.js)
+SRC= $(wildcard index.js lib/*.js test/*)
 TESTS ?= *
 BIN= node_modules/.bin
 C= $(BIN)/component
@@ -8,8 +8,11 @@ PHANTOM= $(BIN)/mocha-phantomjs \
 	--setting local-to-remote-url-access=true \
 	--setting web-security=false
 
-build: node_modules components $(SRC) integrations.js
-	@$(C) build --dev
+build: node_modules components $(SRC) integrations.js test/tests.js
+	@duo build \
+		--entry test/tests.js \
+		--to test/build.js \
+		--dev
 
 components: component.json
 	@duo install --dev
@@ -19,9 +22,6 @@ integrations.js:
 
 test/tests.js: $(wildcard lib/*/test.js)
 	@node bin/tests
-
-test/build.js: test/tests.js
-	@duo build --entry test/tests.js --to test/build.js --dev
 
 kill:
 	-@test -e test/pid.txt \
@@ -51,6 +51,6 @@ test-style: node_modules
 	@$(BIN)/jscs lib/**/index.js --config=test/style.json
 
 clean:
-	rm -rf components build integrations.js
+	rm -rf components build integrations.js test/tests.js test/build.js
 
 .PHONY: clean kill server test test-node test-browser test-coverage

@@ -1,6 +1,6 @@
 
 var assert = require('assert');
-var Integrations = require('integrations');
+var Integrations = require('../index.js');
 var object = require('object');
 
 /**
