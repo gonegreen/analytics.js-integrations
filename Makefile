@@ -12,10 +12,13 @@ build: node_modules components $(SRC) integrations.js
 	@$(C) build --dev
 
 components: component.json
-	@$(C) install --dev
+	@duo install --dev
 
 integrations.js:
 	@node bin/integrations
+
+test/tests.js: $(wildcard lib/*/test.js)
+	@node bin/tests
 
 kill:
 	-@test -e test/pid.txt \
