@@ -11,7 +11,7 @@ PHANTOM= $(BIN)/mocha-phantomjs \
 build: node_modules components $(SRC) integrations.js test/tests.js
 	@duo build \
 		--entry test/tests.js \
-		--to test/build.js \
+		--to build/build.js \
 		--dev
 
 components: component.json
@@ -51,6 +51,6 @@ test-style: node_modules
 	@$(BIN)/jscs lib/**/index.js --config=test/style.json
 
 clean:
-	rm -rf components build integrations.js test/tests.js test/build.js
+	rm -rf components build integrations.js test/tests.js
 
 .PHONY: clean kill server test test-node test-browser test-coverage

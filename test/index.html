@@ -24,6 +24,7 @@
 </head>
 <body>
   <div id="mocha"></div>
+  <!-- TODO: depend on mocha instead -->
   <script src="test/mocha.js"></script>
   <script>
 
@@ -36,7 +37,7 @@
       timeout: 10000
     });
   </script>
-  <script src="test/build.js"></script>
+  <script src="build/build.js"></script>
   <script>
     if (window.mochaPhantomJS) {
       mochaPhantomJS.run();
