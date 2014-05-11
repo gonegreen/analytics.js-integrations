@@ -20,6 +20,9 @@ integrations.js:
 test/tests.js: $(wildcard lib/*/test.js)
 	@node bin/tests
 
+test/build.js: test/tests.js
+	@duo build --entry test/tests.js --to test/build.js --dev
+
 kill:
 	-@test -e test/pid.txt \
 		&& kill `cat test/pid.txt` \
