@@ -4,7 +4,7 @@
   <title>integrations tests</title>
   <link rel="stylesheet" href="test/mocha.css">
 
-  <!-- Keep us from breaking AMD builds. -->
+  <!-- TODO: add require.js back Keep us from breaking AMD builds. -->
 
   <!-- Synchronous Integrations -->
   <script src="//cdn.optimizely.com/js/170430035.js"></script>
@@ -36,7 +36,6 @@
   <script src="test/build.js"></script>
   <script>
     if (window.mochaPhantomJS) {
-      require('debug').disable();
       mochaPhantomJS.run();
     } else {
       mocha.run();
