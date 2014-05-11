@@ -26,6 +26,9 @@
   <div id="mocha"></div>
   <script src="test/mocha.js"></script>
   <script>
+
+    // TODO: don't ignore leaks
+    // instead include all globals via `.global(whatever)`.
     mocha.setup({
       ui: 'bdd',
       ignoreLeaks: true,
