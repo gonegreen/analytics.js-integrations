@@ -48,14 +48,13 @@
     "component/jquery": "*",
     "component/object": "*",
     "component/assert": "*",
-    "ianstormtaylor/sinon": "*",
+    "ianstormtaylor/sinon": "master",
     "jkroso/equals": "*",
-    "segmentio/analytics.js": "*",
+    "segmentio/analytics.js": "duo",
     "segmentio/analytics.js-integration-tester": "*",
     "segmentio/when": "*",
     "yields/clear-timeouts": "*",
     "yields/clear-intervals": "*",
-    "yields/coverage": "*",
     "yields/gravy": "*"
   },
   "scripts": [
