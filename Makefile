@@ -12,10 +12,13 @@ build: node_modules components $(SRC) integrations.js test/tests.js
 	@duo build \
 		--entry test/tests.js \
 		--to build/build.js \
+		--concurrency Infinity \
 		--dev
 
 components: component.json
-	@duo install --dev
+	@duo install \
+		--concurrency Infinity \
+		--dev
 
 integrations.js:
 	@node bin/integrations
