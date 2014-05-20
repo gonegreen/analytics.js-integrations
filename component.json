@@ -75,7 +75,7 @@
     "lib/google-tag-manager.js",
     "lib/mixpanel.js",
     "lib/perfect-audience.js",
-    "lib/twitter-ads.js",
+    "lib/twitter-ads.js"
   ],
   "oldscripts": [
     "index.js",
