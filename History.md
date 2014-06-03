@@ -1,4 +1,48 @@
 
+0.9.3 / 2014-06-02
+==================
+
+ * curebit: make ready on load so iframes have a chance to be rendered
+
+0.9.2 / 2014-06-02
+==================
+
+ * errorception: update testing api key
+ * curebit: debug removing iframe for curebit on multiple .page() calls
+ * curebit: change default for iframeId
+ * facebook ads: migrate facebook ads to new javascript api
+
+0.9.1 / 2014-05-30
+==================
+
+ * adroll: fixing user_id issue and adding tests
+
+0.9.0 / 2014-05-29
+==================
+
+ * errorception: update key
+ * awesomatic: skip tests
+ * piwik: add goals / ecommerce, closes #161
+ * piwik: remove .assumesPageview()
+ * docs: Small fix to example [appcues]
+ * errorception: update key
+ * woopra: add all options, closes #153
+ * kissmetrics: add isMobile
+ * ga: pass through category on track
+ * ga: set `siteSpeedSampleRate` to `1`
+
+0.8.2 / 2014-05-21
+==================
+
+ * ga-ecommerce: fallback to .revenue()
+
+0.8.1 / 2014-05-20
+==================
+
+ * add test for prefixProperties: false
+ * revert kissmetrics props, add more tests
+ * intercom: make sure .Intercom() is loaded
+
 0.8.0 / 2014-05-19
 ==================
 

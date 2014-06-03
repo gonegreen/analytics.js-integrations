@@ -14,6 +14,7 @@ describe('Errorception', function () {
     projectId: '537adee22ea64a236a000586'
   };
 
+
   beforeEach(function () {
     analytics.use(Errorception);
     errorception = new Errorception.Integration(settings);
@@ -90,6 +91,7 @@ describe('Errorception', function () {
       assert(!errorception.loaded());
       errorception.load(function (err) {
         if (err) return done(err);
+        console.log(errorception.loaded());
         assert(errorception.loaded());
         done();
       });
