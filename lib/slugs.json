@@ -6,7 +6,7 @@
   "facebook-ads",
   "google-analytics",
   "google-tag-manager",
-  "mixpanel",
   "perfect-audience",
-  "twitter-ads"
+  "twitter-ads",
+  "keen-io"
 ]

@@ -77,7 +77,7 @@
     "lib/facebook-ads.js",
     "lib/google-analytics.js",
     "lib/google-tag-manager.js",
-    "lib/mixpanel.js",
+    "lib/keen-io.js",
     "lib/perfect-audience.js",
     "lib/twitter-ads.js"
   ],
