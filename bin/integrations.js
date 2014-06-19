@@ -14,6 +14,17 @@ var readdir = fs.readdirSync;
 
 var slugs = readdir(__dirname + '/../lib');
 
+slugs = [
+  'adwords',
+  'bing-ads',
+  'facebook-ads',
+  'google-analytics',
+  'hellobar',
+  'keen-io',
+  'perfect-audience',
+  'twitter-ads',
+];
+
 /**
  * Build requires
  */
