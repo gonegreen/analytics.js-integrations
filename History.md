@@ -1,4 +1,66 @@
 
+1.0.2 / 2014-06-13
+==================
+
+ * bumping obj-case dep
+
+1.0.1 / 2014-06-12
+==================
+
+ * updating dependencies to non-duo branches
+
+1.0.0 / 2014-06-12
+==================
+
+ * converting to use duo
+
+0.9.9 / 2014-06-11
+==================
+
+ * add ability to specify custom integration for `make test`
+ * bugherd: fix test - cant load bugherd unless logged in on browser
+ * facebook-ads: add support for custom events
+ * adroll: add `.page` and make `.track` only send revenue when conversion events are defined
+ * quantcast: adjust pCode
+ * intercom: fix intercom company handling to guarantee an id
+ * fix logic to work for all non-objects, and preserve strings
+ * intercom: fix company when its a string
+
+0.9.8 / 2014-06-05
+==================
+
+ * kenshoo: refactor
+ * mixpanel: delete ip property too
+ * mixpanel: delete reserved properties to avoid conflicts
+ * quantcast: fix exception in identify()
+ * chartbeat: fix issue where Chartbeat script loads and executes before document.body exists
+ * chartbeat: replace obsolete protocol-specific script load URLs with protocol-agnostic URL
+ * chartbeat: Preserve existing _sf_async_config values unless overridden by via settings/defaults
+ * chartbeat: Add useCanonical to options and _sf_async_config with default value true
+
+0.9.7 / 2014-06-04
+==================
+
+ * adwords: fix method name comflict
+
+0.9.6 / 2014-06-04
+==================
+
+ * fix kissmetrics test
+
+0.9.5 / 2014-06-04
+==================
+
+ * kissmetrics: test internal kissmetrics pageView is being called
+ * kissmetrics: fix page calling logic in initialize
+ * kissmetrics: fix kissmetrics to properly handle page views and assumes
+ * woopra: fix woopra config
+ * adwords: add remarketing to adwords
+ * curebit: fix curebit double iframe issue
+ * kissmetrics: fix kissmetrics page tracking
+ * appcues: Adding Appcues integration.
+ * google-analytics: fix custom metrics, remove from page/track/group, closes #177
+
 0.9.4 / 2014-06-03
 ==================
 

@@ -1,19 +1,25 @@
 
-SRC= $(wildcard index.js lib/*.js)
+SRC= $(wildcard *.js lib/*/*.js test/*.js)
+REQUIRES= integrations.js test/tests.js
 tests ?= *
 BINS= node_modules/.bin
-C= $(BINS)/component
+DUO= $(BINS)/duo
 TEST= http://localhost:4202
+BROWSERS= ie10
+
 PHANTOM= $(BINS)/mocha-phantomjs \
 	--setting local-to-remote-url-access=true \
-	--setting web-security=false
+	--setting web-security=false \
+	--path $(BINS)/phantomjs
 
+build: node_modules $(SRC) $(REQUIRES)
+	@$(DUO) --development test/index.js build/build.js
 
-build: node_modules components $(SRC)
-	@$(C) build --dev
+integrations.js:
+	@node bin/integrations
 
-components: component.json
-	@$(C) install --dev
+test/tests.js:
+	@node bin/tests
 
 kill:
 	-@test -e test/pid.txt \
@@ -23,21 +29,21 @@ kill:
 node_modules: package.json
 	@npm install
 
-server: build kill
-	@tests=$(tests) node test/server &
+server: build
+	@node test/server &> /dev/null &
 	@sleep 1
 
-test: build server test-node
+test: build server
 	@$(PHANTOM) $(TEST)
-
-test-node: node_modules
-	@node_modules/.bin/mocha -R spec test/node.js
 
 test-browser: build server
 	@open $(TEST)
 
 test-coverage: build server
 	@open $(TEST)/coverage
+
+test-sauce: build server
+	@BROWSERS=$(BROWSERS) node bin/gravy --url $(TEST)
 
 clean:
 	rm -rf components build
