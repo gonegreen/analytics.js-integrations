@@ -1,6 +1,6 @@
 {
   "name": "integrations",
-  "repo": "segmentio/analytics.js-integrations",
+  "repo": "gonegreen/analytics.js-integrations",
   "description": "All of the third-party analytics.js integrations.",
   "version": "1.0.2",
   "license": "MIT",
