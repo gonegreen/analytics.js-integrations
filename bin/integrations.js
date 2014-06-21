@@ -20,8 +20,6 @@ slugs = [
   'facebook-ads',
   'google-analytics',
   'hellobar',
-  'keen-io',
-  'perfect-audience',
   'twitter-ads',
 ];
 
