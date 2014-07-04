@@ -2,5 +2,9 @@ node_modules
 components
 build
 test/pid.txt
+<<<<<<< HEAD
 
 *.codekit
+=======
+.DS_Store
+>>>>>>> 7cdf83db2f447438b97629d81edb4e64a4368f1a

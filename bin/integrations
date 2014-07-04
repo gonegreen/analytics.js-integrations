@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+var fs = require('fs');
+var write = fs.writeFileSync;
+var readdir = fs.readdirSync;
+
+/**
+ * Get all of the slugs from the directory structure itself.
+ */
+
+write(__dirname + '/../integrations.js', [
+  "",
+  "/**",
+  " * DON'T EDIT THIS FILE. It's automatically generated!",
+  " */",
+  "",
+  "module.exports = [",
+    readdir(__dirname + '/../lib')
+      .filter(function(slug) {
+        return ~['adwords', 'bing-ads', 'facebook-ads', 'google-analytics', 'twitter-ads'].indexOf(slug); //hellobar, 'twitter-ads'
+      })
+      .map(function(slug){
+        return "require('./lib/" + slug + "')"; })
+      .join(',\n')
+      .replace(/^/gm, '  '),
+  "];",
+  ""
+].join('\n'));
